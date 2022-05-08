@@ -78,6 +78,7 @@ class Keyboard {
     this.key;
     this.transfer;
     this.span;
+    this.enter;
   }
 
 creatWrapper(){
@@ -104,22 +105,26 @@ creatKey(obj){
         this.key.setAttribute('data-key', `${key}`);
         this.key.setAttribute('data-value', `${value}`);
         this.span = document.createElement('span');
+        this.span.setAttribute('data-value', `${value}`);
         this.span.classList.add('keyboard-span');
         this.key.append(this.span);
         this.keys.append(this.key)
         if (value === 'del' || value === 'enter') {
             this.span.textContent = value.toUpperCase();
-          } else {
+          } else if(value === 'tab'||value === 'capslock'||value === 'shift'||value === 'alt'||value === 'ctrl'||value === 'win'||value === 'enter'||key === 'ShiftRight' || value === 'backspace'){
             this.span.textContent =
               value.slice(0, 1).toUpperCase() + value.slice(1);
-          } 
-        if (value === 'tab'||value === 'capslock'||value === 'shift'||value === 'alt'||value === 'ctrl'||value === 'win'||value === 'enter'||value === 'del'||value === 'backspace'){
+          } else {
+            this.span.textContent = value.toLowerCase();
+          }
+        if (value === 'tab'||value === 'capslock'||value === 'shift'||value === 'alt'||value === 'ctrl'||value === 'win'||value === 'enter'||value === 'del'||value === 'backspace'||key === 'ShiftRight'){
             this.key.style.background = (this.color)
         }
 
     }
     return this.keys
 }
+
 
 }
 
@@ -129,6 +134,8 @@ let a = new Keyboard('rgb(201 54 54)');
 
 const button = document.querySelectorAll('.keyboard-key');
 const textarea = document.querySelector('.text-area');
+const span = document.querySelectorAll(".keyboard-span")
+
 
 function showValue(event){
     textarea.value += event.currentTarget.dataset.value;
@@ -140,7 +147,7 @@ function buttonSpace(){
     if(this.dataset.value != "space"){
         return this.dataset.value
       } else {
-          return this.dataset.value = " "
+        return this.dataset.value = " "
       }
 }
 
@@ -155,12 +162,118 @@ function buttonTab(){
 }
 button.forEach((el) => el.addEventListener('mouseover', buttonTab));
 
-function buttonDel(){
-    if(this.dataset.value != "del"){
+// function buttonBackspace(){
+//     if(this.dataset.value != "backspace"){
+//         return this.dataset.value
+//       } else {
+//          this.dataset.value = ""
+//       }
+// }
+
+// button.forEach((el) => el.addEventListener('mouseover', buttonBackspace));
+
+// function buttonBackspaceDel(){
+//     if(this.dataset.key != "Backspace"){
+//         return this.dataset.value
+//       } else {
+        
+
+//             textarea.value = this.value.splice(0,3)
+        
+// }
+// }
+
+// button.forEach((el) => el.addEventListener('click', buttonBackspaceDel)); 
+
+// function buttonCaps(){
+//     if(this.dataset.key != "CapsLock"){
+//         return this.dataset.value.toLowerCase()
+//       } else if(textarea.value != textarea.value.toUpperCase()) {
+//           textarea.value = textarea.value.toUpperCase()
+//           this.dataset.value.toUpperCase()
+//       } else {
+//           textarea.value = textarea.value.toLowerCase();
+          
+//       }
+// }
+
+// button.forEach((el) => el.addEventListener('click', buttonCaps));
+
+function buttonCapsDel(){
+    if(this.dataset.value != "capslock"){
         return this.dataset.value
       } else {
-         this.dataset.value = ""
-         textarea.value.slice(-1,1)
+        this.dataset.value = ""
       }
 }
-button.forEach((el) => el.addEventListener('mouseover', buttonDel));
+button.forEach((el) => el.addEventListener('mouseover', buttonCapsDel));
+
+function buttonCtrl(){
+    if(this.dataset.value != "ctrl"){
+        return this.dataset.value
+      } else {
+        this.dataset.value = ""
+      }
+}
+button.forEach((el) => el.addEventListener('mouseover', buttonCtrl));
+
+function buttonAlt(){
+    if(this.dataset.value != "alt"){
+        return this.dataset.value
+      } else {
+        this.dataset.value = ""
+      }
+}
+button.forEach((el) => el.addEventListener('mouseover', buttonAlt));
+
+function buttonShiftLeft(){
+    if(this.dataset.key != "ShiftLeft"){
+        return this.dataset.value
+      } else {
+        this.dataset.value = ""
+      }
+}
+button.forEach((el) => el.addEventListener('mouseover', buttonShiftLeft));
+
+function buttonShiftRight(){
+    if(this.dataset.key != "ShiftRight"){
+        return this.dataset.value
+      } else {
+        this.dataset.value = ""
+      }
+}
+button.forEach((el) => el.addEventListener('mouseover', buttonShiftRight));
+
+function buttonWin(){
+    if(this.dataset.value != "win"){
+        return this.dataset.value
+      } else {
+        this.dataset.value = ""
+      }
+}
+button.forEach((el) => el.addEventListener('mouseover', buttonWin));
+
+function buttoEnter(){
+    if(this.dataset.key != "Enter"){
+        return this.dataset.value 
+      } else { 
+          textarea.value += '\r\n'
+
+      }
+}
+
+button.forEach((el) => el.addEventListener('click', buttoEnter))
+
+function buttoEnterDel(){
+    if(this.dataset.value != "enter"){
+        return this.dataset.value 
+      } else { 
+        this.dataset.value = ""
+      }
+}
+
+button.forEach((el) => el.addEventListener('mouseover', buttoEnterDel))
+
+
+// return textarea.value = textarea.value.replace(/(<p><\/p>)+/g, '<br>');
+
