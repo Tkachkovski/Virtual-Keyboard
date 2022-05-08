@@ -29,7 +29,7 @@ const keyName = {
         BracketRight: ']',
         BackSlash: '\\',
         Delete: 'del',
-        CapsLock: 'caps lock',
+        CapsLock: 'capslock',
         KeyA: 'a',
         KeyS: 's',
         KeyD: 'd',
@@ -68,7 +68,7 @@ const keyName = {
 };
 
 class Keyboard {
-  constructor(color='blue'){
+  constructor(color='grey'){
     this.color = color;
     this.wrapper;
     this.content;
@@ -102,6 +102,7 @@ creatKey(obj){
         this.key = document.createElement('button');
         this.key.classList.add('keyboard-key');
         this.key.setAttribute('data-key', `${key}`);
+        this.key.setAttribute('data-value', `${value}`);
         this.span = document.createElement('span');
         this.span.classList.add('keyboard-span');
         this.key.append(this.span);
@@ -112,12 +113,54 @@ creatKey(obj){
             this.span.textContent =
               value.slice(0, 1).toUpperCase() + value.slice(1);
           } 
+        if (value === 'tab'||value === 'capslock'||value === 'shift'||value === 'alt'||value === 'ctrl'||value === 'win'||value === 'enter'||value === 'del'||value === 'backspace'){
+            this.key.style.background = (this.color)
+        }
 
     }
     return this.keys
 }
 
 }
- let a = new Keyboard('blue');
+
+let a = new Keyboard('rgb(201 54 54)');
  a.creatWrapper()
 
+
+const button = document.querySelectorAll('.keyboard-key');
+const textarea = document.querySelector('.text-area');
+
+function showValue(event){
+    textarea.value += event.currentTarget.dataset.value;
+  
+}
+button.forEach((el) => el.addEventListener('click', showValue));
+
+function buttonSpace(){
+    if(this.dataset.value != "space"){
+        return this.dataset.value
+      } else {
+          return this.dataset.value = " "
+      }
+}
+
+button.forEach((el) => el.addEventListener('mouseover', buttonSpace));
+
+function buttonTab(){
+    if(this.dataset.value != "tab"){
+        return this.dataset.value
+      } else {
+          return this.dataset.value = "  "
+      }
+}
+button.forEach((el) => el.addEventListener('mouseover', buttonTab));
+
+function buttonDel(){
+    if(this.dataset.value != "del"){
+        return this.dataset.value
+      } else {
+         this.dataset.value = ""
+         textarea.value.slice(-1,1)
+      }
+}
+button.forEach((el) => el.addEventListener('mouseover', buttonDel));
