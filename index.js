@@ -162,28 +162,27 @@ function buttonTab(){
 }
 button.forEach((el) => el.addEventListener('mouseover', buttonTab));
 
-// function buttonBackspace(){
-//     if(this.dataset.value != "backspace"){
-//         return this.dataset.value
-//       } else {
-//          this.dataset.value = ""
-//       }
-// }
+function buttonBackspace(){
+    if(this.dataset.value != "backspace"){
+        return this.dataset.value
+      } else {
+         this.dataset.value = ""
+      }
+}
 
-// button.forEach((el) => el.addEventListener('mouseover', buttonBackspace));
+button.forEach((el) => el.addEventListener('mouseover', buttonBackspace));
 
-// function buttonBackspaceDel(){
-//     if(this.dataset.key != "Backspace"){
-//         return this.dataset.value
-//       } else {
-        
+function buttonBackspaceDel(){
+    if(this.dataset.key != "Backspace"){
+        return this.dataset.value
+      } else {
+        let a = textarea.value.toString()
+        return textarea.value = a.slice(0, -1);
 
-//             textarea.value = this.value.splice(0,3)
-        
-// }
-// }
+}
+}
 
-// button.forEach((el) => el.addEventListener('click', buttonBackspaceDel)); 
+button.forEach((el) => el.addEventListener('click', buttonBackspaceDel)); 
 
 // function buttonCaps(){
 //     if(this.dataset.key != "CapsLock"){
@@ -275,5 +274,5 @@ function buttoEnterDel(){
 button.forEach((el) => el.addEventListener('mouseover', buttoEnterDel))
 
 
-// return textarea.value = textarea.value.replace(/(<p><\/p>)+/g, '<br>');
+
 
