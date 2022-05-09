@@ -283,20 +283,15 @@ function buttonDel(){
 
 button.forEach((el) => el.addEventListener('mouseover', buttonDel))
 
+function buttonDelete(){
+  if(this.dataset.key != "Delete"){
+      return this.dataset.value 
+    } else { 
+      textarea.value = ""
+    }
+}
 
-// function animationDown() {
-//   this.style.borderRadius = '20px';
-//   this.style.backgroundColor = 'rgb(181, 69, 69)';
-// };
-
-// button.forEach((el) => el.addEventListener('mousedown', animationDown))
-
-// function animationUp() {
-//   this.style.borderRadius = '0px';
-//   this.style.backgroundColor = 'darkgrey';
-// };
-
-// button.forEach((el) => el.addEventListener('mouseup', animationUp))
+button.forEach((el) => el.addEventListener('click', buttonDelete))
 
 function animationDown() {
   if(this.dataset.key != "Enter" && this.dataset.key != "Backspace" && this.dataset.key != "Delete" && this.dataset.key != "ShiftRight"
