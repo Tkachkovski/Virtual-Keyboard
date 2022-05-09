@@ -321,4 +321,4 @@ function animationUp() {
 
 button.forEach((el) => el.addEventListener('mouseup', animationUp))
 
-// || this.dataset.key != "Backspace" || this.dataset.key != "Delete" || this.dataset.key != "ShiftRight"
+alert("Здравствуйте.Пожалуйста, проверьте работу в последний день кроссчека, постараюсь доделать функционал. Спасибо!")
