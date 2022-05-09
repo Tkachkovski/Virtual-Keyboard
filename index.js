@@ -53,7 +53,7 @@ const keyName = {
         Comma: ',',
         Period: '.',
         Slash: '/',
-        ArrowUp: 'arrowup',
+        ArrowUp: 'art',
         ShiftRight: 'shift ',
         ControlLeft: 'ctrl',
         WinLeft: 'win',
@@ -61,9 +61,9 @@ const keyName = {
         Space: 'space',
         AltRight: 'alt',
         ControlRight: 'ctrl',
-        ArrowLeft: 'arrowleft',
-        ArrowDown: 'arrowdown',
-        ArrowRight: 'arrowright',
+        ArrowLeft: 'arl',
+        ArrowDown: 'ard',
+        ArrowRight: 'arr',
     }
 };
 
@@ -134,7 +134,10 @@ let a = new Keyboard('rgb(201 54 54)');
 
 const button = document.querySelectorAll('.keyboard-key');
 const textarea = document.querySelector('.text-area');
-const span = document.querySelectorAll(".keyboard-span")
+const span = document.querySelectorAll(".keyboard-span");
+const buttonValue = document.getElementsByClassName('keyboard-key');
+
+
 
 
 function showValue(event){
@@ -186,15 +189,12 @@ button.forEach((el) => el.addEventListener('click', buttonBackspaceDel));
 
 // function buttonCaps(){
 //     if(this.dataset.key != "CapsLock"){
-//         return this.dataset.value.toLowerCase()
-//       } else if(textarea.value != textarea.value.toUpperCase()) {
-//           textarea.value = textarea.value.toUpperCase()
-//           this.dataset.value.toUpperCase()
+//         return this.dataset.value
 //       } else {
-//           textarea.value = textarea.value.toLowerCase();
-          
+//         console.log(button.dataset.value)
 //       }
-// }
+//       }
+
 
 // button.forEach((el) => el.addEventListener('click', buttonCaps));
 
