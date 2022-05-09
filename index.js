@@ -117,9 +117,9 @@ creatKey(obj){
           } else {
             this.span.textContent = value.toLowerCase();
           }
-        if (value === 'tab'||value === 'capslock'||value === 'shift'||value === 'alt'||value === 'ctrl'||value === 'win'||value === 'enter'||value === 'del'||value === 'backspace'||key === 'ShiftRight'){
-            this.key.style.background = (this.color)
-        }
+        // if (value === 'tab'||value === 'capslock'||value === 'shift'||value === 'alt'||value === 'ctrl'||value === 'win'||value === 'enter'||value === 'del'||value === 'backspace'||key === 'ShiftRight'){
+        //     this.key.style.background = (this.color)
+        // }
 
     }
     return this.keys
@@ -284,5 +284,46 @@ function buttonDel(){
 button.forEach((el) => el.addEventListener('mouseover', buttonDel))
 
 
+// function animationDown() {
+//   this.style.borderRadius = '20px';
+//   this.style.backgroundColor = 'rgb(181, 69, 69)';
+// };
 
+// button.forEach((el) => el.addEventListener('mousedown', animationDown))
 
+// function animationUp() {
+//   this.style.borderRadius = '0px';
+//   this.style.backgroundColor = 'darkgrey';
+// };
+
+// button.forEach((el) => el.addEventListener('mouseup', animationUp))
+
+function animationDown() {
+  if(this.dataset.key != "Enter" && this.dataset.key != "Backspace" && this.dataset.key != "Delete" && this.dataset.key != "ShiftRight"
+  && this.dataset.key != "Tab" && this.dataset.key != "CapsLock" && this.dataset.key != "ShiftLeft" && this.dataset.key != "ControlLeft"
+  && this.dataset.key != "WinLeft" && this.dataset.key != "AltLeft" && this.dataset.key != "Space" && this.dataset.key != "AltRight" && this.dataset.key != "ControlRight"){
+  this.style.borderRadius = '30px';
+  this.style.backgroundColor = 'rgb(181, 69, 69)';
+  } else {
+    this.style.borderRadius = '30px';
+    this.style.backgroundColor = 'darkgrey';
+  }
+};
+
+button.forEach((el) => el.addEventListener('mousedown', animationDown))
+
+function animationUp() {
+  if(this.dataset.key != "Enter" && this.dataset.key != "Backspace" && this.dataset.key != "Delete" && this.dataset.key != "ShiftRight"
+  && this.dataset.key != "Tab" && this.dataset.key != "CapsLock" && this.dataset.key != "ShiftLeft" && this.dataset.key != "ControlLeft"
+  && this.dataset.key != "WinLeft" && this.dataset.key != "AltLeft" && this.dataset.key != "Space" && this.dataset.key != "AltRight" && this.dataset.key != "ControlRight"){
+    this.style.borderRadius = '0px';
+    this.style.backgroundColor = 'darkgrey'
+    } else {
+      this.style.borderRadius = '0px';
+      this.style.backgroundColor = 'rgb(181, 69, 69)';
+    }
+};
+
+button.forEach((el) => el.addEventListener('mouseup', animationUp))
+
+// || this.dataset.key != "Backspace" || this.dataset.key != "Delete" || this.dataset.key != "ShiftRight"
