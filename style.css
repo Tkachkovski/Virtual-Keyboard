@@ -31,12 +31,12 @@ textarea{
     border: 0.15rem solid black;
     border-radius: 10px;
     height: 200px;
-    width: 65.5%;
+    width: 32rem;
     background-color: rgb(102, 98, 98);
 }
 
 .keyboard-keys{
-    width: 98%;
+    width: 32rem;
     margin: 0.5rem 0.5rem;
 }
 
@@ -103,3 +103,13 @@ button[data-key="AltRight"] {
 button[data-key="ControlRight"] {
     width: 3.5rem;
 }
+
+button[data-key="ArrowUp"],
+button[data-key="ArrowLeft"],
+button[data-key="ArrowRight"],
+button[data-key="ArrowDown"] {
+    padding-bottom: 3.5px;
+}
+
+
+

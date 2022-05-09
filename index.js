@@ -53,7 +53,7 @@ const keyName = {
         Comma: ',',
         Period: '.',
         Slash: '/',
-        ArrowUp: 'art',
+        ArrowUp: '🠕',
         ShiftRight: 'shift ',
         ControlLeft: 'ctrl',
         WinLeft: 'win',
@@ -61,9 +61,9 @@ const keyName = {
         Space: 'space',
         AltRight: 'alt',
         ControlRight: 'ctrl',
-        ArrowLeft: 'arl',
-        ArrowDown: 'ard',
-        ArrowRight: 'arr',
+        ArrowLeft: '🠔',
+        ArrowDown: '🠗',
+        ArrowRight: '🠖',
     }
 };
 
@@ -263,7 +263,7 @@ function buttoEnter(){
 
 button.forEach((el) => el.addEventListener('click', buttoEnter))
 
-function buttoEnterDel(){
+function buttonEnterDel(){
     if(this.dataset.value != "enter"){
         return this.dataset.value 
       } else { 
@@ -271,7 +271,17 @@ function buttoEnterDel(){
       }
 }
 
-button.forEach((el) => el.addEventListener('mouseover', buttoEnterDel))
+button.forEach((el) => el.addEventListener('mouseover', buttonEnterDel))
+
+function buttonDel(){
+  if(this.dataset.value != "del"){
+      return this.dataset.value 
+    } else { 
+      this.dataset.value = ""
+    }
+}
+
+button.forEach((el) => el.addEventListener('mouseover', buttonDel))
 
 
 
