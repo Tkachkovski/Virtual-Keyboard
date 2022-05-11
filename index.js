@@ -107,12 +107,18 @@ class Keyboard {
     this.key;
     this.span;
     this.enter;
+    this.link
   }
 
 creatWrapper(){
   this.wrapper = document.createElement('div');
   this.wrapper.classList.add('wrapper');
   document.body.prepend(this.wrapper);
+  this.link = document.createElement('a');
+  this.link.classList.add('link');
+  this.wrapper.after(this.link);
+  this.link.setAttribute('href', 'https://github.com/Tkachkovski/virtual-keyboard/pull/5')
+  this.link.textContent = "This is a link to my open Pull-Request in Github"
   this.content = document.createElement('div');
   this.content.classList.add('content');
   this.wrapper.append(this.content);
