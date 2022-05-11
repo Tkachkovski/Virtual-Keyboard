@@ -1,3 +1,12 @@
+function getDefaultKeyClick (value){
+  return function(){
+    textarea.value += capslock ? value.toUpperCase() : value.toLowerCase();
+  }
+}
+
+function addToTextarea (event){
+  textarea.value += event.currentTarget
+}
 
 const keysConfig = [
   {key: 'Backquote' , label: '`' , value: '`', handler: getDefaultKeyClick('`')},
