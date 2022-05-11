@@ -29,10 +29,6 @@ function getDefaultKeyClick (value){
   }
 }
 
-function addToTextarea (event){
-  textarea.value += event.currentTarget
-}
-
 const keysConfig = [
   {key: 'Backquote' , label: '`' , value: '`', handler: getDefaultKeyClick('`')},
   {key: 'Number1' , label: '1' , value: '1', handler: getDefaultKeyClick('1')},
@@ -207,7 +203,7 @@ function animationDown() {
     this.style.borderRadius = '30px';
     this.style.backgroundColor = 'darkgrey';
   }
-};
+}
 
 button.forEach((el) => el.addEventListener('mousedown', animationDown))
 
@@ -221,6 +217,6 @@ function animationUp() {
       this.style.borderRadius = '0px';
       this.style.backgroundColor = 'rgb(181, 69, 69)';
     }
-};
+}
 
 button.forEach((el) => el.addEventListener('mouseup', animationUp))
