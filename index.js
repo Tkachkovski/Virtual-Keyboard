@@ -1,3 +1,9 @@
+function getDelClick(){
+  return function(){
+    textarea.value = ""
+  }
+}
+
 function getEnterClick(){
   return function(){
     textarea.value += '\r\n'
