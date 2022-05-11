@@ -1,3 +1,9 @@
+let capslock = false;
+
+function switchCapsLock(){
+  capslock = !capslock;
+}
+
 function getDelClick(){
   return function(){
     textarea.value = ""
@@ -121,46 +127,52 @@ creatWrapper(){
     this.content.append(this.textarea, this.keyboard);
     this.keys = document.createElement('div');
     this.keys.classList.add('keyboard-keys');
-    this.keyboard.append(this.creatKey(keyName.firstKey));
+    this.creatKey();
 }
 
-creatKey(obj){
-    for(let [key, value] of Object.entries(obj)){
-        this.key = document.createElement('button');
-        this.key.classList.add('keyboard-key');
-        this.key.setAttribute('data-key', `${key}`);
-        this.key.setAttribute('data-value', `${value}`);
-        this.span = document.createElement('span');
-        this.span.setAttribute('data-value', `${value}`);
-        this.span.classList.add('keyboard-span');
-        this.key.append(this.span);
-        this.keys.append(this.key)
-        if (value === 'del' || value === 'enter') {
-            this.span.textContent = value.toUpperCase();
-          } else if(value === 'tab'||value === 'capslock'||value === 'shift'||value === 'alt'||value === 'ctrl'||value === 'win'||value === 'enter'||key === 'ShiftRight' || value === 'Backspace'){
-            this.span.textContent =
-              value.slice(0, 1).toUpperCase() + value.slice(1);
-          } else {
-            this.span.textContent = value.toLowerCase();
-          }
-        
-        
+creatKey(){
+  keysConfig.forEach((el) =>  {
+      const {value, key, label, handler} = el;
+      this.key = document.createElement('button');
+      this.key.classList.add('keyboard-key');
+      this.key.setAttribute('data-key', `${key}`);
+      this.key.setAttribute('data-value', `${value}`);
+      this.span = document.createElement('span');
+      this.span.setAttribute('data-value', `${value}`);
+      this.span.classList.add('keyboard-span');
+      this.span.setAttribute('id', key);
+      this.key.append(this.span);
+      this.keys.append(this.key)
+      this.span.textContent = label;
+      this.key.addEventListener('click', handler);
+  })
+  this.keyboard.append(this.keys)
+}
 
+updateKeyboard(){
+  keysConfig.forEach((el) =>{
+    const spanObject = document.getElementById(el.key);
+    if (el.isRedBut){
+      return
     }
-    return this.keys
+    if (capslock !== false){
+      spanObject.textContent = el.label.toUpperCase()
+    } else{
+      spanObject.textContent = el.label.toLowerCase()
+    }
+  })
 }
-
 
 }
 
 let a = new Keyboard('rgb(201 54 54)');
  a.creatWrapper()
+ switchCapsLock()
 
-
-const button = document.querySelectorAll('.keyboard-key');
-const textarea = document.querySelector('.text-area');
-const span = document.querySelectorAll(".keyboard-span");
-const buttonValue = document.getElementsByTagName('button');
+function CapsLockHandler(){
+  switchCapsLock();
+  a.updateKeyboard();
+}
 
 
 
