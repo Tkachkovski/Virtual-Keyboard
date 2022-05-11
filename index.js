@@ -110,37 +110,37 @@ class Keyboard {
   }
 
 creatWrapper(){
-    this.wrapper = document.createElement('div');
-    this.wrapper.classList.add('wrapper');
-    document.body.prepend(this.wrapper);
-    this.content = document.createElement('div');
-    this.content.classList.add('content');
-    this.wrapper.append(this.content);
-    this.textarea = document.createElement('textarea');
-    this.textarea.classList.add('text-area');
-    this.keyboard = document.createElement('div');
-    this.keyboard.classList.add('keyboard', 'keyboard-contetn');
-    this.content.append(this.textarea, this.keyboard);
-    this.keys = document.createElement('div');
-    this.keys.classList.add('keyboard-keys');
-    this.creatKey();
+  this.wrapper = document.createElement('div');
+  this.wrapper.classList.add('wrapper');
+  document.body.prepend(this.wrapper);
+  this.content = document.createElement('div');
+  this.content.classList.add('content');
+  this.wrapper.append(this.content);
+  this.textarea = document.createElement('textarea');
+  this.textarea.classList.add('text-area');
+  this.keyboard = document.createElement('div');
+  this.keyboard.classList.add('keyboard', 'keyboard-contetn');
+  this.content.append(this.textarea, this.keyboard);
+  this.keys = document.createElement('div');
+  this.keys.classList.add('keyboard-keys');
+  this.creatKey();
 }
 
 creatKey(){
   keysConfig.forEach((el) =>  {
-      const {value, key, label, handler} = el;
-      this.key = document.createElement('button');
-      this.key.classList.add('keyboard-key');
-      this.key.setAttribute('data-key', `${key}`);
-      this.key.setAttribute('data-value', `${value}`);
-      this.span = document.createElement('span');
-      this.span.setAttribute('data-value', `${value}`);
-      this.span.classList.add('keyboard-span');
-      this.span.setAttribute('id', key);
-      this.key.append(this.span);
-      this.keys.append(this.key)
-      this.span.textContent = label;
-      this.key.addEventListener('click', handler);
+    const {value, key, label, handler} = el;
+    this.key = document.createElement('button');
+    this.key.classList.add('keyboard-key');
+    this.key.setAttribute('data-key', `${key}`);
+    this.key.setAttribute('data-value', `${value}`);
+    this.span = document.createElement('span');
+    this.span.setAttribute('data-value', `${value}`);
+    this.span.classList.add('keyboard-span');
+    this.span.setAttribute('id', key);
+    this.key.append(this.span);
+    this.keys.append(this.key)
+    this.span.textContent = label;
+    this.key.addEventListener('click', handler);
   })
   this.keyboard.append(this.keys)
 }
@@ -162,8 +162,8 @@ updateKeyboard(){
 }
 
 let a = new Keyboard('rgb(201 54 54)');
- a.creatWrapper()
- switchCapsLock()
+a.creatWrapper()
+switchCapsLock()
 
 function CapsLockHandler(){
   switchCapsLock();
