@@ -174,66 +174,68 @@ function CapsLockHandler(){
   a.updateKeyboard();
 }
 
+const button = document.querySelectorAll('.keyboard-key');
+const textarea = document.querySelector('.text-area');
 
 
 
 
 
-function showValue(event){
-    textarea.value += event.currentTarget.dataset.value;
+// function showValue(event){
+//     textarea.value += event.currentTarget.dataset.value;
   
-}
-button.forEach((el) => el.addEventListener('click', showValue));
+// }
+// button.forEach((el) => el.addEventListener('click', showValue));
 
-function CapsLock(){
-  if(this.dataset.key != "CapsLock"){
-    return this.dataset.value;
-  } else {
-    let b = buttonValue.getAttribute("data-value");
-  }
-}
-button.forEach((el) => el.addEventListener('click', CapsLock));
+// function CapsLock(){
+//   if(this.dataset.key != "CapsLock"){
+//     return this.dataset.value;
+//   } else {
+//     let b = buttonValue.getAttribute("data-value");
+//   }
+// }
+// button.forEach((el) => el.addEventListener('click', CapsLock));
 
-function buttonSpace(){
-    if(this.dataset.value != "space"){
-        return this.dataset.value
-      } else {
-        return this.dataset.value = " "
-      }
-}
+// function buttonSpace(){
+//     if(this.dataset.value != "space"){
+//         return this.dataset.value
+//       } else {
+//         return this.dataset.value = " "
+//       }
+// }
 
-button.forEach((el) => el.addEventListener('mouseover', buttonSpace));
+// button.forEach((el) => el.addEventListener('mouseover', buttonSpace));
 
-function buttonTab(){
-    if(this.dataset.value != "tab"){
-        return this.dataset.value
-      } else {
-          return this.dataset.value = "  "
-      }
-}
-button.forEach((el) => el.addEventListener('mouseover', buttonTab));
+// function buttonTab(){
+//     if(this.dataset.value != "tab"){
+//         return this.dataset.value
+//       } else {
+//           return this.dataset.value = "  "
+//       }
+// }
+// button.forEach((el) => el.addEventListener('mouseover', buttonTab));
 
-function buttonBackspace(){
-    if(this.dataset.value != "Backspace"){
-        return this.dataset.value
-      } else {
-         this.dataset.value = ""
-      }
-}
+// function buttonBackspace(){
+//     if(this.dataset.value != "Backspace"){
+//         return this.dataset.value
+//       } else {
+//          this.dataset.value = ""
+//       }
+// }
 
-button.forEach((el) => el.addEventListener('mouseover', buttonBackspace));
+// button.forEach((el) => el.addEventListener('mouseover', buttonBackspace));
 
-function buttonBackspaceDel(){
-    if(this.dataset.key != "Backspace"){
-        return this.dataset.value
-      } else {
-        let a = textarea.value.toString()
-        return textarea.value = a.slice(0, -1);
+// function buttonBackspaceDel(){
+//     if(this.dataset.key != "Backspace"){
+//         return this.dataset.value
+//       } else {
+//         let a = textarea.value.toString()
+//         return textarea.value = a.slice(0, -1);
 
-}
-}
+// }
+// }
 
-button.forEach((el) => el.addEventListener('click', buttonBackspaceDel)); 
+// button.forEach((el) => el.addEventListener('click', buttonBackspaceDel)); 
 
 // function buttonCaps(){
 //     if(this.dataset.key != "CapsLock"){
@@ -246,100 +248,100 @@ button.forEach((el) => el.addEventListener('click', buttonBackspaceDel));
 
 // button.forEach((el) => el.addEventListener('click', buttonCaps));
 
-function buttonCapsDel(){
-    if(this.dataset.value != "capslock"){
-        return this.dataset.value
-      } else {
-        this.dataset.value = ""
-      }
-}
-button.forEach((el) => el.addEventListener('mouseover', buttonCapsDel));
+// function buttonCapsDel(){
+//     if(this.dataset.value != "capslock"){
+//         return this.dataset.value
+//       } else {
+//         this.dataset.value = ""
+//       }
+// }
+// button.forEach((el) => el.addEventListener('mouseover', buttonCapsDel));
 
-function buttonCtrl(){
-    if(this.dataset.value != "ctrl"){
-        return this.dataset.value
-      } else {
-        this.dataset.value = ""
-      }
-}
-button.forEach((el) => el.addEventListener('mouseover', buttonCtrl));
+// function buttonCtrl(){
+//     if(this.dataset.value != "ctrl"){
+//         return this.dataset.value
+//       } else {
+//         this.dataset.value = ""
+//       }
+// }
+// button.forEach((el) => el.addEventListener('mouseover', buttonCtrl));
 
-function buttonAlt(){
-    if(this.dataset.value != "alt"){
-        return this.dataset.value
-      } else {
-        this.dataset.value = ""
-      }
-}
-button.forEach((el) => el.addEventListener('mouseover', buttonAlt));
+// function buttonAlt(){
+//     if(this.dataset.value != "alt"){
+//         return this.dataset.value
+//       } else {
+//         this.dataset.value = ""
+//       }
+// }
+// button.forEach((el) => el.addEventListener('mouseover', buttonAlt));
 
-function buttonShiftLeft(){
-    if(this.dataset.key != "ShiftLeft"){
-        return this.dataset.value
-      } else {
-        this.dataset.value = ""
-      }
-}
-button.forEach((el) => el.addEventListener('mouseover', buttonShiftLeft));
+// function buttonShiftLeft(){
+//     if(this.dataset.key != "ShiftLeft"){
+//         return this.dataset.value
+//       } else {
+//         this.dataset.value = ""
+//       }
+// }
+// button.forEach((el) => el.addEventListener('mouseover', buttonShiftLeft));
 
-function buttonShiftRight(){
-    if(this.dataset.key != "ShiftRight"){
-        return this.dataset.value
-      } else {
-        this.dataset.value = ""
-      }
-}
-button.forEach((el) => el.addEventListener('mouseover', buttonShiftRight));
+// function buttonShiftRight(){
+//     if(this.dataset.key != "ShiftRight"){
+//         return this.dataset.value
+//       } else {
+//         this.dataset.value = ""
+//       }
+// }
+// button.forEach((el) => el.addEventListener('mouseover', buttonShiftRight));
 
-function buttonWin(){
-    if(this.dataset.value != "win"){
-        return this.dataset.value
-      } else {
-        this.dataset.value = ""
-      }
-}
-button.forEach((el) => el.addEventListener('mouseover', buttonWin));
+// function buttonWin(){
+//     if(this.dataset.value != "win"){
+//         return this.dataset.value
+//       } else {
+//         this.dataset.value = ""
+//       }
+// }
+// button.forEach((el) => el.addEventListener('mouseover', buttonWin));
 
-function buttoEnter(){
-    if(this.dataset.key != "Enter"){
-        return this.dataset.value 
-      } else { 
-          textarea.value += '\r\n'
+// function buttoEnter(){
+//     if(this.dataset.key != "Enter"){
+//         return this.dataset.value 
+//       } else { 
+//           textarea.value += '\r\n'
 
-      }
-}
+//       }
+// }
 
-button.forEach((el) => el.addEventListener('click', buttoEnter))
+// button.forEach((el) => el.addEventListener('click', buttoEnter))
 
-function buttonEnterDel(){
-    if(this.dataset.value != "enter"){
-        return this.dataset.value 
-      } else { 
-        this.dataset.value = ""
-      }
-}
+// function buttonEnterDel(){
+//     if(this.dataset.value != "enter"){
+//         return this.dataset.value 
+//       } else { 
+//         this.dataset.value = ""
+//       }
+// }
 
-button.forEach((el) => el.addEventListener('mouseover', buttonEnterDel))
+// button.forEach((el) => el.addEventListener('mouseover', buttonEnterDel))
 
-function buttonDel(){
-  if(this.dataset.value != "del"){
-      return this.dataset.value 
-    } else { 
-      this.dataset.value = ""
-    }
-}
+// function buttonDel(){
+//   if(this.dataset.value != "del"){
+//       return this.dataset.value 
+//     } else { 
+//       this.dataset.value = ""
+//     }
+// }
 
-button.forEach((el) => el.addEventListener('mouseover', buttonDel))
+// button.forEach((el) => el.addEventListener('mouseover', buttonDel))
 
-function buttonDelete(){
-  if(this.dataset.key != "Delete"){
-      return this.dataset.value 
-    } else { 
-      textarea.value = ""
-    }
-}
+// function buttonDelete(){
+//   if(this.dataset.key != "Delete"){
+//       return this.dataset.value 
+//     } else { 
+//       textarea.value = ""
+//     }
+// }
 
-button.forEach((el) => el.addEventListener('click', buttonDelete))
+// button.forEach((el) => el.addEventListener('click', buttonDelete))
 
 function animationDown() {
   if(this.dataset.key != "Enter" && this.dataset.key != "Backspace" && this.dataset.key != "Delete" && this.dataset.key != "ShiftRight"
@@ -376,11 +378,11 @@ button.forEach((el) => el.addEventListener('mouseup', animationUp))
 // })
 
 
-button.forEach((el) => el.addEventListener('keydown', e =>{
-  if(e.code == keyName.firstKey){
-    textarea.value = "1"
-  }
-  if(e.key === keyName.firstKey.KeyW){
-    textarea.value += keyName.firstKey.KeyW
-  }
-}))
+// button.forEach((el) => el.addEventListener('keydown', e =>{
+//   if(e.code == keyName.firstKey){
+//     textarea.value = "1"
+//   }
+//   if(e.key === keyName.firstKey.KeyW){
+//     textarea.value += keyName.firstKey.KeyW
+//   }
+// }))
