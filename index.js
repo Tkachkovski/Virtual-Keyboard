@@ -1,3 +1,16 @@
+function getEnterClick(){
+  return function(){
+    textarea.value += '\r\n'
+  }
+} 
+
+function getBackspaceClick(){
+  return function(){
+    let valueToString = textarea.value.toString()
+    textarea.value = valueToString.slice(0, -1);
+  }
+}
+
 function getDefaultKeyClick (value){
   return function(){
     textarea.value += capslock ? value.toUpperCase() : value.toLowerCase();
