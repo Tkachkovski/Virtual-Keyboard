@@ -1,0 +1,141 @@
+body{
+    width:100%;
+    height: auto;
+    margin:0 auto;
+    background-color: cadetblue;
+}
+
+.wrapper{
+    width:100%;
+    height: auto;
+    margin:0 auto;
+}
+
+.content{
+    width: 51%;
+    margin:0 auto;
+}
+
+textarea{
+    display: flex;
+    width: 32rem;
+    height: 10rem;
+    margin: 0 auto;
+    margin-top: 3rem;
+    font-size: 20px;
+    border: 0.15rem solid black;
+}
+a{
+    margin: 0 auto;
+    font-size: 1.5rem;
+    color:black;
+    font-weight: bold;
+    padding-left: 515px;
+}
+
+.keyboard {
+    margin: 1.5rem auto;
+    border: 0.15rem solid black;
+    border-radius: 10px;
+    height: 200px;
+    width: 32rem;
+    background-color: rgb(102, 98, 98);
+}
+
+.keyboard-keys{
+    width: 32rem;
+    margin: 0.5rem 0.5rem;
+}
+
+.keyboard-key {
+    margin: 0.05rem 0.035rem;
+    width: 30px;
+    height: 35px;
+    background-color: darkgrey;
+}
+
+span{
+    color: rgb(242, 235, 235);
+}
+
+button[data-key="Backspace"]{
+    width: 5.7rem;
+    background-color:rgb(181, 69, 69);
+}
+
+button[data-key="Tab"]{
+    width: 3rem;
+    background-color:rgb(181, 69, 69);
+}
+
+button[data-key="Delete"]{
+    width: 2.65rem;
+    background-color:rgb(181, 69, 69);
+}
+
+button[data-key="CapsLock"]{
+    width: 4.5rem;
+    background-color:rgb(181, 69, 69);
+}
+
+button[data-key="Enter"]{
+    width: 5.05rem;
+    background-color:rgb(181, 69, 69);
+}
+
+button[data-key="ShiftLeft"]{
+    width: 7.05rem;
+    background-color:rgb(181, 69, 69);
+}
+
+button[data-key="ShiftRight"]{
+    width: 2.5rem;
+    text-align: left;
+    background-color:rgb(181, 69, 69);
+}
+
+button[data-key="ControlLeft"] {
+    width: 3.5rem;
+    background-color:rgb(181, 69, 69);
+}
+
+button[data-key="WinLeft"] {
+    width: 2.5rem;
+    background-color:rgb(181, 69, 69);
+}
+
+button[data-key="Space"] {
+    width: 10.35rem;
+    background-color:rgb(181, 69, 69);
+}
+
+button[data-key="AltLeft"] {
+    width: 2.5rem;
+    background-color:rgb(181, 69, 69);
+}
+
+button[data-key="AltRight"] {
+    width: 2.5rem;
+    background-color:rgb(181, 69, 69);
+}
+
+button[data-key="ControlRight"] {
+    width: 3.5rem;
+    background-color:rgb(181, 69, 69);
+}
+
+
+button[data-key="ArrowUp"],
+button[data-key="ArrowLeft"],
+button[data-key="ArrowRight"],
+button[data-key="ArrowDown"]{
+    padding-bottom: 3.5px;
+}
+
+button:hover{
+    background-color: rgb(95,158,160, 0.5);
+    transition: 0.2s;
+}
+
+
+
