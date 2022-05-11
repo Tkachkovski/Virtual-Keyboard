@@ -25,6 +25,13 @@ textarea{
     font-size: 20px;
     border: 0.15rem solid black;
 }
+a{
+    margin: 0 auto;
+    font-size: 1.5rem;
+    color:black;
+    font-weight: bold;
+    padding-left: 515px;
+}
 
 .keyboard {
     margin: 1.5rem auto;
